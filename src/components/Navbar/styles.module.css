@@ -1,0 +1,26 @@
+.navbar_container {
+  background: lightgreen;
+  height: 66px;
+}
+
+.navbar_inner_container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo_container {
+  display: flex;
+  align-items: center;
+}
+
+.list_container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.list_item {
+  margin-right: 20px;
+  list-style: none;
+}

@@ -1,6 +1,5 @@
 import React from "react";
 import { api } from "../../axios";
-import productItems from "../../components/productItems";
 import styles from "./styles.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -18,9 +17,6 @@ const products = ({ productList }) => {
             <Link href={`products/${product.id}`}>
               <button>details</button>
             </Link>
-            {/* <button onClick={() => router.push(`products/${product.id}`)}>
-              details
-            </button> */}
           </div>
         </>
       ))}
