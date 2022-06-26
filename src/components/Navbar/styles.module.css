@@ -1,6 +1,6 @@
 .navbar_container {
-  background: lightgreen;
   height: 66px;
+  border-bottom: 1px solid #000;
 }
 
 .navbar_inner_container {

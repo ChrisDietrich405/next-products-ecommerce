@@ -6,9 +6,17 @@
 }
 
 .product_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 200px;
+  height: 350px;
+  box-shadow: 1px 3px #888888;
+  margin: 20px;
 }
 
 .product_image {
   width: 140px;
+  height: 120px;
 }
