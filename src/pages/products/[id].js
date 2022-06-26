@@ -6,6 +6,38 @@ const ProductItem = ({ productItem }) => {
   const router = useRouter();
 
   const handleAddToCart = () => {
+    const localStorageItems = localStorage.getItem("productItems");
+    if (localStorageItems) {
+      //for when a previous item was added (line 12 - 33)
+      const productItemsArray = JSON.parse(localStorageItems);
+      let foundItem = false;
+      const findProductItem = productItemsArray.map((product) => {
+        if (product.id === productItem.id) {
+          foundItem = true;
+          return { ...product, quantity: product.quantity + 1 };
+        } else {
+          return product;
+        }
+      });
+      if (foundItem) {
+        localStorage.setItem("productItems", JSON.stringify(findProductItem));
+      } else {
+        localStorage.setItem(
+          // not the first time the user has been to the website
+          "productItems", //so there are objects in the cart, but not this specific object
+          JSON.stringify([
+            ...productItemsArray,
+            { ...productItem, quantity: 1 },
+          ])
+        );
+      }
+    } else {
+      localStorage.setItem(
+        //very first interaction with website
+        "productItems",
+        JSON.stringify([{ ...productItem, quantity: 1 }])
+      );
+    }
     router.push("/cart");
   };
 
