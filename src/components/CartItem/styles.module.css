@@ -6,3 +6,8 @@
 .img {
   width: 150px;
 }
+
+.btn_container {
+  display: flex;
+  justify-content: space-around;
+}

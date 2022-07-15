@@ -37,28 +37,6 @@ const Cart = () => {
     );
   };
 
-  // const handleAddItem = (id) => {
-  //   setProducts(
-  //     products.map((product) => {
-  //       if (product.id == id) {
-  //         product.quantity += 1;
-  //       }
-  //       return product;
-  //     })
-  //   );
-  // };
-
-  // const handleSubtractItem = (id) => {
-  //   setProducts(
-  //     products.map((product) => {
-  //       if (product.id === id && product.quantity > 0) {
-  //         product.quantity -= 1;
-  //       }
-  //       return product;
-  //     })
-  //   );
-  // };
-
   useEffect(() => {
     const productArray = localStorage.getItem("productItems");
     if (productArray) {

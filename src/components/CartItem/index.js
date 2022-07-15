@@ -10,10 +10,13 @@ const CartItem = ({ product, handleProductQuantity }) => {
         <h3>{product.title}</h3>
         <p>${product.price}</p>
         <img className={styles.img} src={product.image} alt="" />
+
+        <p>{product.quantity}</p>
+      </div>
+      <div className={styles.btn_container}>
         <button onClick={() => handleProductQuantity(product.id, "add")}>
           Add Item
         </button>
-        <p>{product.quantity}</p>
         <button onClick={() => handleProductQuantity(product.id, "subtract")}>
           Subtract Item
         </button>
