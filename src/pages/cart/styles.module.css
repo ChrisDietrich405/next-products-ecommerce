@@ -1,4 +1,33 @@
 .cart_container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.checkout {
+  background: #121214;
+  border-radius: 6px;
+  padding: 2rem;
+}
+
+.input_group {
   display: flex;
-  justify-content: space-around;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.input_group input {
+  background: #fff;
+  border: 1px solid #b6b7b6;
+  padding: 0.5rem;
+}
+
+.checkout button {
+  padding: 0.25rem;
+  background: #71252f;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+  width: 100%;
+  margin-top: 4rem;
 }

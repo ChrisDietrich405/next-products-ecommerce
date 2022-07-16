@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import CartItem from "../../components/CartItem";
+import { useForm } from 'react-hook-form'
 
 import styles from "./styles.module.css";
 
 const Cart = () => {
   const [products, setProducts] = useState(null);
-
+  const { register, handleSubmit } = useForm()
+ 
   const allProducts =
     products &&
     products.reduce(
@@ -49,8 +51,24 @@ const Cart = () => {
     products?.length > 0 &&
       localStorage.setItem("productItems", JSON.stringify(products));
   }, [products]);
+
+  const mySubmitFunction = (data) => {
+    console.log({data})
+  } 
+
   return (
     <div className={styles.cart_container}>
+      <form className={styles.checkout} onSubmit={handleSubmit(mySubmitFunction)} >
+        <section className={styles.input_group}>
+          <input name="name" placeholder="Jhonson" {...register("name")} />
+          <input name="street" placeholder="Vinicius's Street" {...register("street")}/>
+          <input name="number" placeholder="22" {...register("number")} />
+          <input name="city" placeholder="Vinicius's City" {...register("city")} />
+          <input name="residence" placeholder="House" {...register("residence")}/>
+          <textarea name="feedback" placeholder="Your feedback" {...register("feedback")} />
+        </section>
+        <button>Submit</button>
+      </form>
       <div>
         {products
           ? products.map((product) => (
